@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Models.Framework.LopHoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    <style>
+        .text-muted {
+            height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+        }
+        img {
+            object-fit: cover;
+            width: 100%;
+            max-height: 250px;
+            min-height: 250px;
+        }
+    </style>
+    
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Khóa học</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="~/Home/chitiet/@item.ID" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(item.hinh))
+                        {
+                            <img src="~/@item.hinh" class="img-responsive" alt="">
+                        }
+                        else
+
+                        {<img src="https://idevelopcourses.com/wp-content/uploads/2020/04/11220df81631c7737ade4809b87ed82a-online-degrees-form-of.jpg" class="img-responsive" alt="">}
+                        @*{<img src="https://drive.google.com/thumbnail?id=14433w0Qp2tnteaXBxQGt5wqInOR6b5O3" class="img-responsive" alt="">}*@
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>@item.tenLopHoc</h4>
+                        <p class="text-muted">@item.mota</p>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+
+
+

@@ -1,0 +1,153 @@
+﻿@model Models.Framework.HocVien
+
+
+@{
+    ViewBag.Title = "DKHocVien";
+    Layout = "~/Views/Shared/_TemLayout.cshtml";
+}
+
+<h2>DKHocVien</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>HocVien</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TaiKhoan.hovaten, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TaiKhoan.hovaten, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TaiKhoan.hovaten, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.diachi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.diachi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.diachi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.gioitinh, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.gioitinh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.gioitinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ngaysinh, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ngaysinh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ngaysinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sdt, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sdt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.sdt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idTK, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.idTK, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idTK, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<div class="item item1">
+                <div class="card card-widget widget-user-2 shadow-sm">
+                    <div class="widget-user-header bg-warning">
+                        <div id="img" class="widget-user-image">
+<img class="img-circle elevation-2" src="../dist/img/user7-128x128.jpg" alt="User Avatar">
+</div>
+<h3 id="nameTeacher" class="widget-user-username">
+Nadia Carmichael
+</h3>
+<h5 id="job"class="widget-user-desc">
+Lead Developer
+</h5>
+</div>
+<div class="card-footer p-0">
+    <ul class="nav flex-column">
+        <li class="nav-item" style="color:black">
+            <a id="nameClass"class="nav-link" style="pointer-events:none">
+Tên lớp:
+<span class="float-right badge bg-danger">842</span>
+    </a>
+</li>
+<li class="nav-item" style="color:black">
+    <a id="numBers" class="nav-link" style="pointer-events:none">
+Số lượng:
+<span class="float-right badge bg-danger">842</span>
+    </a>
+</li>
+<li class="nav-item" style="color:black">
+    <a id="startLearn" class="nav-link" style="pointer-events:none">
+Khai giảng
+<span class="float-right badge bg-danger">842</span>
+    </a>
+</li>
+<li class="nav-item" style="color:black">
+    <a id="Due" class="nav-link" style="pointer-events:none">
+Lịch học:
+<span class="float-right badge bg-danger">842</span>
+    </a>
+</li>
+<li class="nav-item" style="color:black">
+    <a id="numberMonths" class="nav-link" style="pointer-events:none">
+Số tháng:
+<span class="float-right badge bg-danger">842</span>
+    </a>
+</li>
+<li class="nav-item" style="color:black">
+    <a id="endLearn" class="nav-link" style="pointer-events:none">
+Ngày kết thúc:
+<span class="float-right badge bg-danger">842</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="color:black; text-align:center">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <button type="submit">
+                                <i class="fas fa-user-edit"></i>
+                            </button>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <button type="submit">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
